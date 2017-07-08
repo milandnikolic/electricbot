@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Awesome sites</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<div class="viewport">
+		<div class="full-row">
+			<div class="mn-col3" id="left">
+				l
+			</div>
+
+			<div class="flip-container mn-col4" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front hikario">
+						<div class="overlay"></div>
+					</div>
+					<div class="back">
+					      <h2 class="back-title">Bootstrap</h2>
+					      <p class="subtitle">www.hikario.net</p>
+					      <p>Single page website made with bootstrap and converted in WordPress. Powered by a custom theme.</p>
+					       <a href="http://hikario.net/" class="hvr-bounce-to-bottom" target="_blank">view</a>
+					 </div>
+				</div>
+			</div>
+
+			<div class="flip-container mn-col5" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front antenika">
+						<div class="overlay"></div>
+					</div>
+					<div class="back">
+					      <div class="back-title">woocommerce</div>
+					      <p class="subtitle">www.antenika.rs</p>
+					      <p>This is an awesome e-shop website, based on Woocommerce and WordPress</p>
+					     <a href="http://antenika.rs/" class="hvr-bounce-to-bottom" target="_blank">view</a>
+					 </div>
+				</div>
+			</div>
+
+
+		</div>
+		<div class="full-row">
+			<div class="flip-container mn-col3" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front daynnight">
+						<div class="overlay"></div>
+					</div>
+					<div class="back">
+					      <div class="back-title">wordpress</div>
+					      <p class="subtitle">www.daynnighthostel.com</p>
+					      <p>Website is based on bootstrap WordPress. It has online room bookings.</p>
+					      <a href="http://daynnighthostel.com/" class="hvr-bounce-to-bottom" target="_blank">view</a>
+					 </div>
+				</div>
+			</div>
+
+			<div class="mn-col6 align-center" id="center">
+				<h1>with us, your web possibilities are limitless!</h1>
+				<div class="separator"></div>
+				<h3>We code the web using modern technologies!</h3>
+				<h3>Our services are: <a  class="typewrite" data-period="2000" data-type='[ "Full website development", "psd to WordPress", "Developing E-Commerce Websites", "CSS3 Animations" ]'>
+    			<span class="wrap"></span></a></h3>
+			</div>
+
+			<div class="mn-col3 align-center technologies" id="contact">
+				<h2>OUR TECHNOLOGIES</h2>
+				<div class="tech-wrap">
+					<p>HTML | <span>html5</span></p>
+					<p>CSS | <span>css3 &amp; sass</span></p>
+					<p>JS | <span>jQuery &amp; angular</span></p>
+					<p>CMS | <span>WordPress</span></p>
+					<p>BE | <span>php &amp; mysql</span></p>
+				</div>
+			</div>
+
+		</div>
+		<div class="full-row">
+			<div class="flip-container mn-col4" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front panasonic">
+						<div class="overlay"></div>
+					</div>
+					<div class="back">
+					      <div class="back-title">woocommerce</div>
+					      <p class="subtitle">www.panasonic-klime.rs</p>
+					      <p>Website is based on Woocommerce and WordPress, powered by a custom theme. Front-end is made using Bootstrap. </p>
+					      <a href="http://panasonic.nikolic.win/" class="hvr-bounce-to-bottom" target="_blank">view</a>
+					 </div>
+				</div>
+			</div>
+
+			<div class="flip-container mn-col3" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front standard">
+						<div class="overlay"></div>
+					</div>
+					<div class="back">
+					      <div class="back-title">custom</div>
+					      <p class="subtitle">www.standard-doo.co.rs</p>
+					      <p>This website is made in clean html, css and php.It is a custom website with catalog of products.</p>
+					      <a href="http://www.standard-doo.co.rs/" class="hvr-bounce-to-bottom" target="_blank">view</a>
+					 </div>
+				</div>
+			</div>
+
+
+
+
+			<div class="mn-col2 align-center" id="contact">
+				<h2>CONTACT US</h2>
+				<p>milan@nikolic.win</p>
+				<p>+381 69 197 99 40</p>
+				<p>Serbia, Niš</p>
+			</div>
+
+			<div class="mn-col3" id="right">
+				d
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+	</script>
+</body>
+</html>
